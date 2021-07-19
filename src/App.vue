@@ -1,28 +1,52 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <input-btn @add="addNew"></input-btn>
+    <todo-list :list="list" @update-row="updateRow" @delete-row="deleteRow"></todo-list>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import inputBtn from "./components/inputBtn";
+import todoList from "./components/todoList";
 
 export default {
-  name: 'App',
+  name: "App",
+  data() {
+    return {
+      list: [],
+    };
+  },
   components: {
-    HelloWorld
-  }
-}
+    inputBtn,
+    todoList,
+  },
+  methods: {
+    addNew(value) {
+      this.list.push({
+        value,
+        status: 0,
+      });
+    },
+    // 更新
+    updateRow(row, status) {
+      this.$set(row, "status", status);
+    },
+    // 删除
+    deleteRow(inx) {
+      this.list.splice(inx, 1);
+    },
+  },
+};
 </script>
 
 <style>
+@import "./styles/index.css";
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 600px;
+  margin: 0 auto;
+  /* border: 1px solid #000; */
+  margin-top: 20vh;
+  height: 50vh;
+  color: #666;
 }
 </style>
