@@ -1,0 +1,100 @@
+button {
+  color: #fff;
+  border-radius: 4px;
+  padding: 5px 15px;
+  border: 1px solid #fff;
+  line-height: 1.499;
+  cursor: pointer;
+  width: fit-content;
+}
+/* 默认按钮 */
+button.default {
+  color: #606266;
+  background-color: #fff;
+  border-color: #dcdfe6;
+}
+button.default:hover {
+  color: #409eff;
+  border-color: #c6e2ff;
+  background-color: #ecf5ff;
+}
+button.default:active {
+  color: #3a8ee6;
+  border-color: #3a8ee6;
+}
+/* 主要按钮 */
+button.primary {
+  background-color: #409eff;
+  border-color: #409eff;
+}
+button.primary:hover {
+  background: #66b1ff;
+  border-color: #66b1ff;
+}
+button.primary:active {
+  background: #3a8ee6;
+  border-color: #3a8ee6;
+}
+/* 成功按钮 */
+button.success {
+  background-color: #67c23a;
+  border-color: #67c23a;
+}
+button.success:hover {
+  background: #85ce61;
+  border-color: #85ce61;
+}
+button.success:active {
+  background: #5daf34;
+  border-color: #5daf34;
+}
+/* 信息按钮 */
+button.info {
+  background-color: #909399;
+  border-color: #909399;
+}
+button.info:hover {
+  background: #a6a9ad;
+  border-color: #a6a9ad;
+}
+button.info:active {
+  background: #82848a;
+  border-color: #82848a;
+}
+/* 警告按钮 */
+button.warning {
+  background-color: #e6a23c;
+  border-color: #e6a23c;
+}
+button.warning:hover {
+  background: #ebb563;
+  border-color: #ebb563;
+}
+button.warning:active {
+  background: #cf9236;
+  border-color: #cf9236;
+}
+/* 危险按钮 */
+button.danger {
+  background-color: #f56c6c;
+  border-color: #f56c6c;
+}
+button.danger:hover {
+  background-color: #f78989;
+  border-color: #f78989;
+}
+button.danger:active {
+  background: #dd6161;
+  border-color: #dd6161;
+}
+/* 文字按钮 */
+button.text {
+  color: #409eff;
+  border-color: transparent;
+  background: transparent;
+  /* padding-left: 0;
+  padding-right: 0; */
+}
+button.text:hover {
+  color: #66b1ff;
+}
