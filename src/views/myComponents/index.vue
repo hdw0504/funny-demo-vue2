@@ -9,8 +9,8 @@
         <dw-button type="primary">primary</dw-button>
         <dw-button type="success">success</dw-button>
         <dw-button type="info">info</dw-button>
-        <dw-button type="warning" waiting>warning </dw-button>
-        <dw-button type="danger" loading>loading danger</dw-button>
+        <dw-button type="warning" waiting>warning waiting</dw-button>
+        <dw-button type="danger" loading>danger loading</dw-button>
         <dw-button type="text">text</dw-button>
       </div>
     </div>
