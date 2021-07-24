@@ -1,40 +1,27 @@
 <template>
   <div id="app">
-    <input-btn @add="addNew"></input-btn>
-    <todo-list :list="list" @update-row="updateRow" @delete-row="deleteRow"></todo-list>
+    <nav-menu id="menu" v-model="curName" :list="componentsList"></nav-menu>
+    <component :is="curName"></component>
   </div>
 </template>
 
 <script>
-import inputBtn from "./components/inputBtn";
-import todoList from "./components/todoList";
+import navMenu from "./components/navMenu/index";
+import myComponents from "./views/myComponents/index";
+import todoList from "./views/todoList/index";
 
 export default {
   name: "App",
+  components: {
+    navMenu,
+    todoList,
+    myComponents,
+  },
   data() {
     return {
-      list: [],
+      curName: "myComponents",
+      componentsList: ["myComponents", "todoList"],
     };
-  },
-  components: {
-    inputBtn,
-    todoList,
-  },
-  methods: {
-    addNew(value) {
-      this.list.push({
-        value,
-        status: 0,
-      });
-    },
-    // 更新
-    updateRow(row, status) {
-      this.$set(row, "status", status);
-    },
-    // 删除
-    deleteRow(inx) {
-      this.list.splice(inx, 1);
-    },
   },
 };
 </script>
@@ -42,11 +29,13 @@ export default {
 <style>
 @import "./styles/index.css";
 #app {
-  width: 600px;
-  margin: 0 auto;
-  /* border: 1px solid #000; */
-  margin-top: 20vh;
-  height: 50vh;
-  color: #666;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#menu {
+  margin-top: 5vh;
+  width: 80%;
 }
 </style>
